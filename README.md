@@ -8,11 +8,11 @@ Toda la interfaz se genera dinámicamente desde JavaScript.
 BioClima es una aplicación responsive que obtiene datos meteorológicos reales mediante la API de OpenWeather. 
 Incluye:
 
-- listado dinámico de localidades en `index.html`.
-- tarjetas con clima actual.
-- navegación hacia detalles mediante `detalles.html?id=<id>`(página `detalles.html` que recibe `id` por URL)
-- módulo de ayuda interactivo disponible en todas las páginas.
-- estadísticas semanales generadas desde datos reales.
+- Listado dinámico de localidades en `index.html`.
+- Tarjetas con clima actual.
+- Navegación hacia detalles mediante `detalles.html?id=<id>`(página `detalles.html` que recibe `id` por URL)
+- Módulo de ayuda interactivo disponible en todas las páginas.
+- Estadísticas semanales generadas desde datos reales.
 
 ## 🚀 Novedades en JavaScript ES6+
 
@@ -33,8 +33,8 @@ El proyecto utiliza JavaScript moderno y una arquitectura basada en clases:
 - Controla la lógica principal de la app
 
 ✔ Otras características ES6+
-- async/await
-- fetch con manejo de errores
+- Async/await
+- Fetch con manejo de errores
 - URLSearchParams para leer parámetros
 - Template literals para HTML dinámico
 - Arrow functions
