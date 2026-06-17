@@ -51,7 +51,7 @@ class WeatherApp {
     }
 
     // ============================
-    // RENDER HOME
+    // RENDER DE HOME
     // ============================
     renderHome() {
         const contenedor = document.getElementById("contenedor-cards");
@@ -110,7 +110,7 @@ class WeatherApp {
     }
 
     // ============================
-    // RENDER DETALLE
+    // RENDER DE DETALLE
     // ============================
     renderDetalle(lugar, clima, pronostico) {
         document.getElementById("detalle-nombre").textContent = lugar.nombre;

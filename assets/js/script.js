@@ -1,7 +1,5 @@
-// assets/js/script.js
-
 // ===============================
-// BOTÓN DE AYUDA (HOME Y DETALLES)
+// BOTÓN DE AYUDA
 // ===============================
 const btnAyuda = document.getElementById("ayuda");
 const panelAyuda = document.getElementById("panel-ayuda");

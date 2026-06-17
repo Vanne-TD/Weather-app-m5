@@ -1,4 +1,3 @@
-// apiClient.js
 const API_KEY = "55639301e1b144878d64bc2def687854";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
