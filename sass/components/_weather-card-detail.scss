@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.weather-card-detail {
+    @include card-surface(var(--color-panel-soft, #642387d9), var(--radius-base, 1rem));
+    @include center-flex; 
+    outline: 5px solid var(--color-white, #fff);
+    color: var(--color-white, #fff); // ← ahora sí está bien
+
+    // &__content {
+    //    text-align: center; 
+    // }
+
+    // &__temp {
+    //     font-size: 2.5rem;
+    //     font-weight: 700;
+    //     color: var(--color-white, #fff);
+    // }
+
+    // &__icon {
+    //     width: 80px;      
+    //     height: auto;     
+    //     max-width: 100%;  
+    //     object-fit: contain;
+    //     display: block;   
+    //     margin: 0 auto 10px auto;
+    // }
+    & p {
+        color: var(--color-text-soft, #6c5b7b);
+    }
+}

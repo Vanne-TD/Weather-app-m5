@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioClima | Detalles de Localidad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body>
+
+  <!-- Encabezado principal -->
+  <header class="l-header sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-purple navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand l-header__brand fw-bold" href="index.html">🌤️ El Clima</a>
+
+        <button class="navbar-toggler l-header__toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link l-header__link active" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link l-header__link" href="about.html">About project</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle l-header__link" href="#" role="button" data-bs-toggle="dropdown">
+                Localidades Biobío
+              </a>
+
+              <ul class="dropdown-menu bg-white l-header__dropdown">
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=12">Antuco</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=5">Chiguayante</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=4">Concepción</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=10">Coronel</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=11">Lebu</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=2">Los Ángeles</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=9">Lota</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=6">San Pedro de la Paz</a>
+                </li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=3">Santa Juana</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=7">Talcahuano</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=8">Tomé</a></li>
+                <li><a class="dropdown-item l-header__dropdown-item" href="detalles.html?id=1">Yumbel</a></li>
+              </ul>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+
+
+
+  <main class="l-main container my-5">
+
+    <header class="text-center mb-5 l-main__header">
+      <h1 class="display-4 fw-bold ">Clima en la Región del Biobío</h1>
+      <p class="lead text-muted">Información actualizada de las principales comunas</p>
+    </header>
+
+    <section class="weather-section">
+      <div id="contenedor-cards" class="row g-4 justify-content-center"></div>
+    </section>
+
+  </main>
+
+
+
+  <!-- Footer -->
+  <footer class="l-footer ">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+
+        <!-- Logo + descripción -->
+        <div class="col-12 col-md-4 text-center text-md-start">
+          <span class="l-footer__logo">🌤️ El Clima Biobío</span>
+          <p class="l-footer__author text-white">Vanessa Torres Drake</p>
+          <p class="l-footer__description mt-2">
+            Información meteorológica precisa para la Región del Biobío.
+          </p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="col-12 col-md-4 text-center">
+          <nav class="l-footer__nav" aria-label="Enlaces del pie de página">
+            <ul class="list-unstyled d-flex justify-content-center gap-3 mb-0">
+              <li><a href="home.html" class="l-footer__link">Inicio</a></li>
+              <li><a href="about.html" class="l-footer__link">Proyecto</a></li>
+              <li><a href="contacto.html" class="l-footer__link">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Derechos -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <p class="l-footer__copyright mb-0">
+            &copy; 2026 El Clima Biobío. Vanessa Torres Drake<br>
+            <small>Diseñado con HTML Semántico, BEM y Bootstrap.</small>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <button id="ayuda" class="btn-ayuda">ℹ️</button>
+
+  <div id="panel-ayuda" class="panel-ayuda">
+    <h4 class="panel-ayuda__title">¿Necesitas ayuda?</h4>
+    <p class="panel-ayuda__text">
+      Puedes revisar el clima por comuna, ver detalles del proyecto o contactarnos.
+    </p>
+    <button id="cerrar-ayuda" class="cerrar-ayuda">Cerrar</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/apiClient.js"></script>
+<script src="./assets/js/weatherApp.js"></script>
+<script src="./assets/js/home.js"></script>
+<script src="./assets/js/script.js"></script>
+
+  
+
+
+</body>
+
+</html>

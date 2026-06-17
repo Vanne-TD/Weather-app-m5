@@ -1,0 +1,77 @@
+// Tipografía
+
+$font-family-base: "Inter", "Arial", sans-serif;
+$font-family-heading: "Poppins", "Arial", sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+$font-title:  "Saira Stencil", sans-serif;
+
+$line-height-base: 1.6;
+$line-height-tight: 1.2;
+
+// Pesos de fuente
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;
+
+// colores Principales
+
+$color-background: #e4cff9;
+$color-panel: #2c1237;
+$color-panel-soft: #792ba2d9;
+$color-panel-alt: #340854;
+$color-panel-dark: #12021a;
+$color-white: #ffffff;
+$color-text: #3a2b4d;
+$color-text-soft: #f3e8ff;
+$color-accent: #8a11c6;
+$color-border: rgba(255, 255, 255, 0.2);
+$color-shadow: rgba(0, 0, 0, 0.15);
+
+//Colores para fondo
+$bg-base: $color-background;
+$bg-accent: $color-accent;
+$bg-panel: $color-panel;
+$bg-dark: $color-panel-dark;
+
+
+
+$radius-base: 1rem;
+$radius-sm: 0.6rem;
+$radius-circle: 9999px;
+
+// Breakpoints para responsive
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 1440px;
+
+// Bordes
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Espaciados (margenes y padding)
+// (xs, sm, md, lg, xl, basados en una escala modular)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 48px;
+
+// Basados en una escala de 10px para facilitar cálculos y consistencia
+$space-1:10px;
+$space-2:20px;
+$space-3:30px;
+
+$breakpoint-sm: 540px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+// Sombras
+$box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+$box-shadow-dark: 0 8px 24px rgba(0, 0, 0, 0.2);
+

@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+
+// _theme-dark.scss
+
+// 🌙 THEME DARK
+
+$color-background: #1a0f24; // fondo más oscuro
+$color-panel: #2c1237;      // morado oscuro original
+$color-panel-alt: #300a4c;  // tono profundo
+$color-panel-dark: #12021a; // fondo oscuro
+$color-panel-soft: rgba(97, 0, 139, 0.85);
+
+$color-text: #f3e8ff;       // texto claro
+$color-text-soft: #e8d9ff;
+
+$color-border: rgba(255, 255, 255, 0.15);

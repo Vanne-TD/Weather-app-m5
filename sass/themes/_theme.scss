@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+
+
+// 🎨 THEME BASE (SASS)
+
+// Colores
+$color-background: #e4cff9;
+$color-panel: #2c1237;
+$color-panel-alt: #340854;
+$color-panel-dark:#170221;
+$color-panel-soft: #792ba2d9;
+
+$color-accent: #8a11c6;
+$color-white: #ffffff;
+
+// Texto
+$color-text: #3a2b4d;
+$color-text-soft: #f3e8ff;
+
+// Bordes y sombras
+$color-border: rgba(255, 255, 255, 0.2);
+$box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+// Espaciados
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+
+// Bordes
+$radius-base: 1rem;
+
+// Tipografías
+$font-weight-bold: 700;
+$line-height-base: 1.6;

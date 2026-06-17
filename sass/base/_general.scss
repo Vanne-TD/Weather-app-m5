@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+    background-color: var(--bg-base, #ede6f5);
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+
+.container {
+  width: min(1080px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.section {
+  @include section-spacing($spacing-xl, $spacing-xl);
+}
+
+.page-title {
+  margin-bottom: $spacing-md;
+}

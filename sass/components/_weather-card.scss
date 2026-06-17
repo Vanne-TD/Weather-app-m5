@@ -1,0 +1,45 @@
+﻿@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.weather-card {
+    @include card-surface(transparent, 1.25rem);
+    border: none;
+
+    &--bg {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.197)),
+                    url('../img/cielo-azul-fondo-clima-nubes_261642-70.avif');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+    }
+
+    &__button {
+        background-color: var(--color-panel-alt, #560985);
+        border: 1px solid rgba(242, 231, 240, 1);
+        font-style: italic;
+        position: relative;
+    }
+
+    &__temp {
+        font-weight: var(--font-weight-bold, 700);
+        color: $color-white;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+
+        &--rounded {
+            border-radius: 50%;
+        }
+    }
+
+    &__temp-display {
+        @include responsive-type(2rem, 4vw, 3rem);
+        font-weight: var(--font-weight-bold, 700);
+        line-height: 1;
+        color: $color-white;
+    }
+}

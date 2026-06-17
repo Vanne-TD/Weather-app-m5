@@ -1,0 +1,30 @@
+
+@use "../abstracts/variables" as *;
+
+:root {
+  --color-background: #{$color-background};
+  --color-panel: #{$color-panel};
+  --color-panel-alt: #{$color-panel-alt};
+  --color-panel-dark: #{$color-panel-dark};
+  --color-panel-soft: #{$color-panel-soft};
+
+  --color-accent: #{$color-accent};
+  --color-white: #{$color-white};
+
+  --color-text: #{$color-text};
+  --color-text-soft: #{$color-text-soft};
+
+  --color-border: #{$color-border};
+  --box-shadow-light: #{$box-shadow-light};
+  --box-shadow-medium: #{$box-shadow-medium};
+
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+
+  --radius-base: #{$radius-base};
+
+  --font-weight-bold: #{$font-weight-bold};
+  --line-height-base: #{$line-height-base};
+}

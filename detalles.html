@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BioClima | Detalles de Localidad</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body class="weather-app">
+    <!-- HEADER -->
+    <header class="l-header sticky-top shadow-sm">
+      <nav class="navbar navbar-expand-lg bg-purple navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand l-header__brand fw-bold" href="index.html"
+            >🌤️ El Clima</a
+          >
+
+          <button
+            class="navbar-toggler l-header__toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link l-header__link active" href="index.html"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link l-header__link" href="about.html"
+                  >About project</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle l-header__link"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Localidades Biobío
+                </a>
+
+                <ul class="dropdown-menu bg-white l-header__dropdown">
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=12"
+                      >Antuco</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=5"
+                      >Chiguayante</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=4"
+                      >Concepción</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=10"
+                      >Coronel</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=11"
+                      >Lebu</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=2"
+                      >Los Ángeles</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=9"
+                      >Lota</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=6"
+                      >San Pedro de la Paz</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=3"
+                      >Santa Juana</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=7"
+                      >Talcahuano</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=8"
+                      >Tomé</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item l-header__dropdown-item"
+                      href="detalles.html?id=1"
+                      >Yumbel</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="l-main container my-5">
+      <!-- TÍTULO -->
+      <section class="l-main__header text-center mb-5">
+        <h1 id="detalle-titulo" class="display-4 fw-bold p-3 mt-3">
+          Pronóstico Detallado
+        </h1>
+      </section>
+
+      <!-- TARJETA PRINCIPAL -->
+      <section class="weather-section">
+        <div class="row justify-content-center mb-5 h-100">
+          <div class="col-12 col-md-8 col-lg-4">
+            <article
+              class="card weather-card-detail text-white text-center p-4 shadow-sm border-0"
+            >
+              <div class="weather-card-detail__content">
+                <!-- Nombre de la ciudad -->
+                <h2 id="detalle-nombre" class="h4 mb-0">
+                  Localidad Seleccionada
+                </h2>
+
+                <!-- Temperatura -->
+                <p
+                  id="detalle-temp"
+                  class="display-2 my-3 text-white fw-bolder"
+                >
+                  --°C
+                </p>
+
+                <!-- Icono -->
+                <img
+                  id="detalle-icono"
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  width="80"
+                  class="img-fluid mb-3"
+                  alt="Clima actual"
+                />
+
+                <!-- Datos -->
+                <div class="weather-card-detail__stats mt-3">
+                  <p class="mb-1 text-white">
+                    Viento: <strong id="detalle-viento">-- km/h</strong>
+                  </p>
+                  <p class="mb-1 text-white">
+                    Humedad: <strong id="detalle-humedad">--%</strong>
+                  </p>
+                  <p class="mb-0 text-white">
+                    Sensación: <strong id="detalle-sensacion">-- °C</strong>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- PRONÓSTICO SEMANAL -->
+        <section class="weather-weekly p-4 rounded-5 shadow">
+          <h2 class="text-center text-white mb-4">Pronóstico de la Semana</h2>
+
+          <div id="pronostico-semanal" class="row g-3 justify-content-center">
+            <!-- JS insertará los 7 días -->
+          </div>
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+        <section class="weather-stats mt-5 p-4 rounded-5 shadow text-center">
+          <h2 class="mb-4">Estadísticas</h2>
+
+          <p id="stats-max">Máxima semanal: --°C</p>
+          <p id="stats-min">Mínima semanal: --°C</p>
+          <p id="stats-prom">Promedio semanal: --°C</p>
+        </section>
+
+        <!-- RESUMEN -->
+        <section class="weather-summary mt-5 p-4 rounded-5 shadow text-center">
+          <h2 class="mb-4">Resumen del clima</h2>
+
+          <p id="resumen-clima" class="text-muted">
+            <!-- JS insertará el resumen -->
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="l-footer">
+      <div class="container">
+        <div class="row gy-4 align-items-center">
+          <!-- Logo + descripción -->
+          <div class="col-12 col-md-4 text-center text-md-start">
+            <span class="l-footer__logo">🌤️ El Clima Biobío</span>
+            <p class="l-footer__author text-white">Vanessa Torres Drake</p>
+            <p class="l-footer__description mt-2">
+              Información meteorológica precisa para la Región del Biobío.
+            </p>
+          </div>
+
+          <!-- Navegación -->
+          <div class="col-12 col-md-4 text-center">
+            <nav class="l-footer__nav" aria-label="Enlaces del pie de página">
+              <ul
+                class="list-unstyled d-flex justify-content-center gap-3 mb-0"
+              >
+                <li><a href="home.html" class="l-footer__link">Inicio</a></li>
+                <li>
+                  <a href="about.html" class="l-footer__link">Proyecto</a>
+                </li>
+                <li>
+                  <a href="contacto.html" class="l-footer__link">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Derechos -->
+          <div class="col-12 col-md-4 text-center text-md-end">
+            <p class="l-footer__copyright mb-0">
+              &copy; 2026 El Clima Biobío.<br />
+              <small>Diseñado con HTML Semántico, BEM y Bootstrap.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button id="ayuda" class="btn-ayuda">ℹ️</button>
+
+    <div id="panel-ayuda" class="panel-ayuda">
+      <h4 class="panel-ayuda__title">¿Necesitas ayuda?</h4>
+      <p class="panel-ayuda__text">
+        Puedes revisar el clima por comuna, ver detalles del proyecto o
+        contactarnos.
+      </p>
+      <button id="cerrar-ayuda" class="cerrar-ayuda">Cerrar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/apiClient.js"></script>
+    <script src="./assets/js/weatherApp.js"></script>
+    <script src="./assets/js/detalles.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// .panel-ayuda {
+//   position: fixed;
+//   bottom: calc($spacing-lg + 20px);
+//   left: $spacing-sm;
+//   background: $color-white;
+//   padding: $spacing-sm;
+//   border-radius: $radius-base;
+//   box-shadow: 0 4px 12px $color-shadow;
+//   width: 240px;
+//   display: none;
+//   z-index: 998;
+//   font-family: $font-family-base;
+//   color: $color-text;
+
+//   &__title {
+//     font-family: $font-family-heading;
+//     font-weight: $font-weight-bold;
+//     margin-bottom: $spacing-xs;
+//   }
+
+//   &__text {
+//     font-size: 0.95rem;
+//     line-height: $line-height-base;
+//   }
+// }
+
+.panel-ayuda {
+  position: fixed;
+  bottom: $spacing-lg;
+  left: $spacing-sm;
+  background: $color-panel-soft;
+  padding: $spacing-md;
+  border-radius: $radius-base;
+  box-shadow: $box-shadow-medium;
+  width: 260px;
+  z-index: 998;
+  color: $color-text-soft;
+  backdrop-filter: blur(6px);
+  border: 1px solid $color-border;
+
+  /* Estado inicial: oculto pero animable */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
