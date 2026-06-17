@@ -1,87 +1,97 @@
-# 🌤️ Aplicación de Clima - Mi Proyecto
+﻿# 🌤️ BioClima - Aplicación de Clima
 
-Una aplicación web moderna que muestra información del clima en diferentes ciudades de la región de Biobío, Chile.
+Aplicación web desarrollada con JavaScript ES6+, Programación Orientada a Objetos (POO) y consumo real de la API de OpenWeather, que muestra el clima actual y el pronóstico para localidades de la Región del Biobío, Chile.
+Toda la interfaz se genera dinámicamente desde JavaScript.
 
 ## 📋 Descripción
 
-**Proyecto Clima** es una aplicación web diseñada para mostrar el clima actual y el pronóstico semanal de ciudades de la región del Biobío, Chile. La temática se centra en localidades urbanas de la zona, con datos de temperatura, sensación térmica, estado del cielo, viento y humedad.
+BioClima es una aplicación responsive que obtiene datos meteorológicos reales mediante la API de OpenWeather. 
+Incluye:
 
-En la versión actual los datos se modelan localmente y la interfaz está pensada para integrarse fácilmente con una API meteorológica real en el futuro.
+- listado dinámico de localidades en `index.html`.
+- tarjetas con clima actual.
+- navegación hacia detalles mediante `detalles.html?id=<id>`(página `detalles.html` que recibe `id` por URL)
+- módulo de ayuda interactivo disponible en todas las páginas.
+- estadísticas semanales generadas desde datos reales.
 
-## 🧩 Modelo de Datos
+## 🚀 Novedades en JavaScript ES6+
 
-El clima se organiza en un arreglo llamado `lugares` dentro de `assets/js/data.js`. Cada objeto de lugar contiene:
+El proyecto utiliza JavaScript moderno y una arquitectura basada en clases:
 
-- `id` y `nombre` de la ciudad
-- `tempActual`, `sensacion` y `estadoActual`
-- `viento`, `humedad` e `icono`
-- `pronosticoSemanal`: un arreglo de 7 días con `dia`, `min`, `max` y `estado`
+✔ class ApiClient (assets/js/apiClient.js)
+- Conecta con OpenWeather
+- Obtiene clima actual y pronóstico
+- Maneja errores con try/catch
+- Devuelve datos listos para usar
 
-La aplicación usa este modelo para generar las tarjetas de ciudades, la vista de detalles y el pronóstico semanal en cada localidad.
+✔ class WeatherApp (assets/js/weatherApp.js)
+- Define las localidades (id, nombre, lat, lon)
+- Gestiona la carga de datos
+- Renderiza Home y Detalles
+- Calcula estadísticas
+- Genera alertas simples
+- Controla la lógica principal de la app
 
-## 📊 Estadísticas calculadas
+✔ Otras características ES6+
+- async/await
+- fetch con manejo de errores
+- URLSearchParams para leer parámetros
+- Template literals para HTML dinámico
+- Arrow functions
+- Métodos de array (map, reduce, filter)
+- Spread operator
 
-En esta versión la app calcula estadísticas semanales en `assets/js/detalles.js` a partir del `pronosticoSemanal` del lugar seleccionado:
+## 🧠 Lógica de funcionamiento
 
-- `Máxima semanal`: temperatura máxima entre los 7 días
-- `Mínima semanal`: temperatura mínima entre los 7 días
-- `Promedio semanal`: promedio de las temperaturas máximas de la semana
+✔ Home (home.js)
 
-También muestra un resumen textual que describe el rango de temperaturas esperado para la semana.
+- Inicializa la app
+- Solicita clima actual de cada localidad
+- Renderiza tarjetas dinámicas
+- Cada card enlaza a detalles.html?id=<id>
 
-## 🎨 Metodología de Estilos
+✔ Detalles (detalles.js)
 
-La aplicación utiliza la metodología **BEM (Block, Element, Modifier)** para la nomenclatura de clases CSS, lo que facilita la mantenibilidad y escalabilidad del código de estilos.
+Solicita:
+  - clima actual
+  - pronóstico en bloques de 3 horas
 
-## 🏗️ Estructura SASS
+Renderiza:
+  - temperatura actual
+  - sensación térmica
+  - humedad y viento
+  - icono meteorológico
+  - pronóstico extendido
+  - estadísticas semanales
+  - resumen textual
+  - alertas simples, por ejemplo:
+     - semana calurosa
+     - semana lluviosa
 
-El proyecto emplea la arquitectura **7-1 de Sass**, que organiza los estilos en parciales modulares:
+✔ Manejo de errores
+- Si la API falla, la app muestra un mensaje visible en pantalla.
 
-- **abstracts/**: Variables y mixins reutilizables.
-- **base/**: Estilos base como reset, tipografía y generales.
-- **components/**: Estilos para componentes específicos como botones, tarjetas de clima, etc.
-- **layout/**: Estilos para el layout general (header, footer, main).
-- **pages/**: Estilos específicos para páginas individuales (home, about).
-- **themes/**: Temas y variaciones de color para css.
-- **vendors/**: Estilos de bibliotecas externas como Bootstrap y jQuery UI.
-
-## 🌍 Ciudades Disponibles
-
-La aplicación incluye información sobre las siguientes ciudades:
-
-- Antuco
-- Chiguayante
-- Concepción
-- Coronel
-- Lebu
-- Los Ángeles
-- Lota
-- San Pedro de la Paz
-- Santa Juana
-- Talcahuano
-- Tomé
-- Yumbel
-
-## 🏗️ Estructura del Proyecto
+## 📁 Estructura del proyecto
 
 ```
-proyecto-clima/
-├── home.html                      # Página principal del listado de ciudades
-├── about.html                     # Página sobre el proyecto
-├── detalles.html                  # Página de detalles que recibe un id por URL
+proyecto-clima-m5/
+├── index.html                 # Página principal con listado de ciudades
+├── about.html                 # Página del proyecto
+├── detalles.html              # Página de detalle que recibe `id` en la URL
+├── README.md                  # Documentación del proyecto
 ├── assets/
 │   ├── css/
-│   │   ├── main.css               # Estilos compilados desde Sass
-│   │   └── main.css.map           # Mapa de origen para depuración
+│   │   └── main.css           # Estilos compilados desde Sass
 │   ├── img/
 │   │   ├── cielo-azul-fondo-clima-nubes_261642-70.avif
 │   │   └── iconos-clima-nublado-lluvioso-soleado.png
 │   └── js/
-│       ├── data.js                # Datos de los lugares y pronóstico semanal
-│       ├── home.js                # Lógica de la página home
-│       ├── detalles.js            # Lógica de la página de detalles y estadísticas
-│       └── script.js              # Lógica común / botón de ayuda
-├── sass/                          # Código Sass fuente
+│       ├── apiClient.js       # Cliente de OpenWeather
+│       ├── weatherApp.js      # Lógica principal de la app
+│       ├── home.js            # Inicializa el home y renderiza las cards
+│       ├── detalles.js        # Carga y renderiza la página de detalle
+│       └── script.js          # Panel de ayuda y comportamiento común
+├── sass/                      # Código Sass fuente (arquitectura 7-1)
 │   ├── abstracts/
 │   ├── base/
 │   ├── components/
@@ -89,87 +99,75 @@ proyecto-clima/
 │   ├── pages/
 │   ├── themes/
 │   ├── vendors/
-│   └── main.scss                  # Archivo principal de Sass
-└── README.md                      # Este archivo
+│   └── main.scss
 ```
 
-## 🚀 Características
+## ✨ Características principales
 
-- ✨ Interfaz responsiva y moderna
-- 🎨 Diseño atractivo con imágenes de fondo
-- 📱 Compatible con dispositivos móviles
-- 🔍 Búsqueda de ciudades
-- 📊 Información detallada del clima por localidad
-- 🎯 Navegación intuitiva
+- Carga de clima en tiempo real desde OpenWeather.
+- Listado dinámico de localidades.
+- Detalles con pronóstico en bloques de 3 horas.
+- Estadísticas semanales automáticas.
+- Diseño responsive con Bootstrap 5.3.8.
+- Alertas simples basadas en reglas.
+- Panel de ayuda interactivo.
+- Arquitectura Sass 7-1 para estilos.
+- DOM completamente dinámico
 
-## 💻 Tecnologías Utilizadas
+## 🛠️ Tecnologías utilizadas
 
-- **HTML5** - Estructura semántica
-- **CSS3** - Estilos y diseño responsivo
-- **Sass** - Preprocesador CSS para mantener estilos modulares y escalables
-- **JavaScript (Vanilla)** - Interactividad
-- **Bootstrap 5.3.8** - Framework de CSS para diseño responsivo
-- **AVIF** - Formato de imagen optimizado
+- HTML5 semántico
+- CSS3 + BEM
+- Sass (arquitectura 7-1)
+- JavaScript ES6+
+- Programación Orientada a Objetos (POO)
+- Bootstrap 5.3.8
+- Fetch API + async/await
+- OpenWeather API
+- AVIF para optimización de imágenes
 
-## 📖 Cómo Usar
+## 📌 Uso
 
-1. **Abrir la aplicación**
-   - Haz clic en `home.html` para acceder a la página principal.
+1. Abre `index.html` en tu navegador.
+2. El home cargará automáticamente el clima actual de cada localidad.
+3. Haz clic en "Ver más" para abrir `detalles.html?id=<id>` con información completa.
 
-2. **Navegar**
-   - Utiliza la barra de navegación para moverte entre páginas.
-   - Selecciona una ciudad para ver detalles específicos del clima.
+## �️ Ejecutar localmente
 
-3. **Ver detalles**
-   - Cada ciudad tiene su propia página con información específica. En estos momentos se modificó para integrar JavaScript para preparla para integración de API futura, por lo que sólo hay una hoja que se modificará para que la misma interactúe para cada localidad.
-   - Al abrir la página base, esta sólo cuenta con un modelado de la pagina final, para ver cómo queda con JavaScript es necesario que tenga al final de html? el id=numero de la localidad, a modo de ejemplo: http://127.0.0.1:3000/detalles.html?id=3. De esta forma se carga la configuracion realizada con JavaScript.
-   - Si accedes desde el menú o desde las cards del home, lo anterior no aplica, ya que, ya están cargadas con su id para un mejor manejo de la app.
+- Con Python 3:
+  - `python -m http.server 8000`
+  - Abre `http://localhost:8000` en tu navegador.
+- Con la extensión Live Server en VS Code:
+  - instala Live Server (extensión)
+  - haz clic en "Go Live"
 
-4. **Ver About**
-   - La página "About" contiene información sobre el proyecto.
+Esto asegura que las solicitudes a la API y los recursos estáticos se carguen correctamente.
 
-## 🎯 Páginas Principales
+## �💡 Notas importantes
 
-| Página | Descripción |
-|--------|-------------|
-| `home.html` | Página inicio con las ciudades disponibles |
-| `about.html` | Información sobre el proyecto |
-| `detalles-*.html` | Detalles específicos del clima de cada ciudad incluyendo un pronóstico semanal, estadística de la temperatura y resumen del clima del día |
+- `detalles.html` requiere del parámetro `id` en la URL.
+- El `id` debe corresponder a una localidad definida en `assets/js/weatherApp.js`.
+- Si la API no responde, el proyecto muestra un mensaje de error en consola/pantalla.
 
-## 🔧 Instalación
+## 📚 Desarrollo
 
-No requiere instalación para usarlo en el navegador. Simplemente:
-
-1. Descarga o clona el repositorio
-2. Abre `home.html` en tu navegador web
-3. ¡Disfruta explorando el clima!
-
-> Si trabajas en el desarrollo, los estilos se mantienen en el directorio `sass/` y se compilan en `assets/css/main.css`. 
-
-## 📝 Desarrollo
-
-El proyecto fue desarrollado como parte del Bootcamp Front End, demostrando habilidades en:
-
-- Maquetación HTML
-- Estilos CSS avanzados con Sass
-- JavaScript vanilla
-- Diseño responsivo
-- Uso de frameworks modernos
-
-Si editas estilos, modifica los archivos en `sass/` y vuelve a compilar para actualizar `assets/css/main.css`.
+- Si editas estilos, modifica archivos en `sass/` y compila con  `sass --watch assets/css/main.css`.
+- El código está preparado para futuras mejoras como:
+  - búsqueda de localidades
+  - pronóstico extendido
+  - mejor manejo de errores y carga visual
 
 ## 🤝 Contribuciones
 
-Este proyecto fue desarrollado durante el bootcamp. Las sugerencias y mejoras son bienvenidas.
+Proyecto desarrollado en el Bootcamp Front End. Las mejoras son bienvenidas.
 
 ## 📄 Licencia
-
 Este proyecto es de uso educativo.
 
-Para acceder al repositorio en Github--> [gh Vanne-TD/weather-frontend-m4](https://github.com/Vanne-TD/Weather-frontend-m4.git)
+Para acceder al repositorio en Github--> [gh Vanne-TD/Weather-app-m5](https://github.com/Vanne-TD/Weather-app-m5.git)
 
 
 ---
 
 **Creado durante:** Bootcamp Front End Trainee
-**Última actualización:** Mayo 2026
+**Última actualización:** Junio 2026
